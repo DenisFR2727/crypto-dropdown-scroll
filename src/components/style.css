@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.dropdown {
+  display: block;
+}
+.default-coins {
+  display: flex;
+}
+.default-coins li {
+  display: flex;
+
+  padding: 10px;
+  color: white;
+  list-style: none;
+}
+.panel-coins {
+  width: 350px;
+}
+.panel-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  height: 70px;
+  padding: 0 0 0 20px;
+  background: black;
+}
+.search-btn {
+  width: 100px;
+  background: grey;
+  height: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  background: black;
+  border: none;
+  cursor: pointer;
+}
+.search-btn .icon-search {
+  padding-right: 5px;
+}
+.search-btn:hover {
+  background: grey;
+}
+.search {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 5px 0 5px 0;
+  background: black;
+}
+.search .search-icon {
+  width: 20px;
+  height: 20px;
+  padding-left: 3px;
+  background: black;
+  color: white;
+  margin-left: 10px;
+}
+.search input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: black;
+  color: white;
+  padding-left: 5px;
+}
+.functional-btn {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+}
+.functional-btn button {
+  padding: 16px;
+  font-weight: 700;
+  color: white;
+  background: black;
+  border: none;
+  cursor: pointer;
+}
+.functional-btn button:hover {
+  background: grey;
+}
+.functional-btn .star-btn {
+  padding-right: 9px;
+}
+.functional-btn .ofstar {
+  margin-right: 10px;
+}
+/* list coins */
+.list-coins {
+  list-style: none;
+  padding-top: 20px;
+  background: black;
+  height: 400px;
+  padding-left: 15px;
+  overflow-y: auto;
+}
+.list-coins::-webkit-scrollbar {
+  display: none;
+}
+.list-coins .coin-list-all {
+  padding-bottom: 20px;
+  list-style: none;
+  font-weight: 700;
+  color: white;
+}
+.coin-list-all .star {
+  padding-right: 7px;
+}
+.coin-list-all::-webkit-scrollbar {
+  display: none;
+}
+.list-coins li .star {
+  list-style: none;
+  padding-right: 8px;
+}
