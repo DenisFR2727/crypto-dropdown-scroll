@@ -16,6 +16,11 @@
   color: white;
   list-style: none;
 }
+#modal-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .panel-coins {
   width: 350px;
 }
@@ -83,8 +88,18 @@
   border: none;
   cursor: pointer;
 }
-.functional-btn button:hover {
+/* .functional-btn button:hover {
   background: grey;
+} */
+.no-coin {
+  position: relative;
+  color: white;
+}
+.onstar.active-tab {
+  background: grey;
+}
+.ofstar.active-tab {
+  background-color: grey;
 }
 .functional-btn .star-btn {
   padding-right: 9px;
@@ -112,11 +127,27 @@
 }
 .coin-list-all .star {
   padding-right: 7px;
+  cursor: pointer;
 }
 .coin-list-all::-webkit-scrollbar {
   display: none;
 }
+.coin-list-all {
+  user-select: none;
+}
+.hover-element-coin:hover {
+  background: rgba(128, 128, 128, 0.101);
+}
 .list-coins li .star {
   list-style: none;
   padding-right: 8px;
+}
+.list-coins li:hover {
+  border: 1px solid white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#modal-root {
+  width: 350px;
+  margin: 0 auto;
 }
