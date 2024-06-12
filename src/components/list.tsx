@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ICoin, fetchCoinList } from "./api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as fasStar } from "@fortawesome/free-solid-svg-icons";
