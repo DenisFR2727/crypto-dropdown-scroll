@@ -132,6 +132,13 @@
   display: none;
 }
 .coin-list-all {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
+  user-select: none;
+}
+.list-coins {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
   user-select: none;
 }
 .hover-element-coin:hover {
@@ -140,6 +147,9 @@
 .list-coins li .star {
   list-style: none;
   padding-right: 8px;
+}
+.list-coins .coin-list-all::-webkit-scrollbar {
+  display: none;
 }
 .list-coins li:hover {
   border: 1px solid white;
