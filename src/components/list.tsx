@@ -41,7 +41,7 @@ function ListCoins() {
     if (showFavorites) {
       setQuery("");
     }
-  }, []);
+  }, [showFavorites]);
 
   const hideFavoritesCoins = useCallback((): void => {
     setShowFavorites(false);
