@@ -166,8 +166,26 @@ function ListCoins() {
               </button>
             </div>
             <div className="list-coins">
-              {favoriteCoins.length === 0 && filteredCoins.length === 0 ? (
-                <div className="no-coin">No add coin favorite</div>
+              {showFavorites ? (
+                favoriteCoins.length === 0 ? (
+                  <div className="no-coin">Coins favorites empty!</div>
+                ) : (
+                  <List
+                    className="coin-list-all"
+                    width={300}
+                    height={400}
+                    itemCount={favoriteCoins.length}
+                    itemSize={35}
+                  >
+                    {Row}
+                  </List>
+                )
+              ) : filteredCoins.length === 0 ? (
+                  allCoins.length === 0 ? (
+                  <div className="no-coin">No coins available!</div>
+                ) : (
+                  <div className="no-coin">No coins found!</div>
+                )
               ) : (
                 <List
                   className="coin-list-all"
