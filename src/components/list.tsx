@@ -181,7 +181,7 @@ function ListCoins() {
                   </List>
                 )
               ) : filteredCoins.length === 0 ? (
-                  allCoins.length === 0 ? (
+                allCoins.length === 0 ? (
                   <div className="no-coin">No coins available!</div>
                 ) : (
                   <div className="no-coin">No coins found!</div>
