@@ -116,6 +116,25 @@ function ListCoins() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  interface ICoinsProps {
+    message: string;
+    coins: ICoin[];
+  }
+  const CoinList = ({ coins }: Pick<ICoinsProps, "coins">) => (
+    <List
+      className="coin-list-all"
+      width={300}
+      height={400}
+      itemCount={coins.length}
+      itemSize={35}
+    >
+      {Row}
+    </List>
+  );
+
+  const NoCoinMessage = ({ message }: Pick<ICoinsProps, "message">) => (
+    <div className="no-coin">{message}</div>
+  );
   return (
     <div className="dropdown">
       <div className="panel-search-btn">
@@ -168,34 +187,18 @@ function ListCoins() {
             <div className="list-coins">
               {showFavorites ? (
                 favoriteCoins.length === 0 ? (
-                  <div className="no-coin">Coins favorites empty!</div>
+                  <NoCoinMessage message="Coins favorites empty!" />
                 ) : (
-                  <List
-                    className="coin-list-all"
-                    width={300}
-                    height={400}
-                    itemCount={favoriteCoins.length}
-                    itemSize={35}
-                  >
-                    {Row}
-                  </List>
+                  <CoinList coins={favoriteCoins} />
                 )
               ) : filteredCoins.length === 0 ? (
                 allCoins.length === 0 ? (
-                  <div className="no-coin">No coins available!</div>
+                  <NoCoinMessage message="No coins available!" />
                 ) : (
-                  <div className="no-coin">No coins found!</div>
+                  <NoCoinMessage message="No coins found!" />
                 )
               ) : (
-                <List
-                  className="coin-list-all"
-                  width={300}
-                  height={400}
-                  itemCount={filteredCoins.length}
-                  itemSize={35}
-                >
-                  {Row}
-                </List>
+                <CoinList coins={filteredCoins} />
               )}
             </div>
           </div>,
