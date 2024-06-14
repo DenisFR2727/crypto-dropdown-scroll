@@ -160,3 +160,9 @@
   width: 350px;
   margin: 0 auto;
 }
+.no-coin {
+  font-family: Poppins;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}

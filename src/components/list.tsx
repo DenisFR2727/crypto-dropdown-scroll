@@ -25,8 +25,12 @@ function ListCoins() {
   const modalRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): boolean => {
+    const { value } = e.target;
+    if (/^[a-zA-Z0-9]*$/.test(value)) {
+      setQuery(value);
+    }
+    return false;
   };
   //   filter coins
   const filterCoins = (coins: ICoin[], query: string): ICoin[] => {
@@ -49,7 +53,7 @@ function ListCoins() {
   }, []);
 
   const handleAddFavorite = useCallback(
-    (coin: ICoin) => {
+    (coin: ICoin): void => {
       if (favoriteCoins.includes(coin)) {
         setFavoriteCoins(favoriteCoins.filter((c: ICoin) => c !== coin));
       } else {
@@ -97,7 +101,7 @@ function ListCoins() {
     fetchData();
   }, []);
 
-  const modalRoot = document.getElementById("modal-root");
+  const modalRoot: HTMLElement | null = document.getElementById("modal-root");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -168,7 +172,7 @@ function ListCoins() {
             <div className="list-coins">
               {favoriteCoins.length === 0 && filteredCoins.length === 0 ? (
                 <div className="no-coin">
-                  No add favorite coins. Coins empty!
+                  No add favorite coins. Coins not found!
                 </div>
               ) : (
                 <List
