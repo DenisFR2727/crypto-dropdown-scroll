@@ -116,25 +116,6 @@ function ListCoins() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  interface ICoinsProps {
-    message: string;
-    coins: ICoin[];
-  }
-  const CoinList = ({ coins }: Pick<ICoinsProps, "coins">) => (
-    <List
-      className="coin-list-all"
-      width={300}
-      height={400}
-      itemCount={coins.length}
-      itemSize={35}
-    >
-      {Row}
-    </List>
-  );
-
-  const NoCoinMessage = ({ message }: Pick<ICoinsProps, "message">) => (
-    <div className="no-coin">{message}</div>
-  );
   return (
     <div className="dropdown">
       <div className="panel-search-btn">
@@ -185,20 +166,20 @@ function ListCoins() {
               </button>
             </div>
             <div className="list-coins">
-              {showFavorites ? (
-                favoriteCoins.length === 0 ? (
-                  <NoCoinMessage message="Coins favorites empty!" />
-                ) : (
-                  <CoinList coins={favoriteCoins} />
-                )
-              ) : filteredCoins.length === 0 ? (
-                allCoins.length === 0 ? (
-                  <NoCoinMessage message="No coins available!" />
-                ) : (
-                  <NoCoinMessage message="No coins found!" />
-                )
+              {favoriteCoins.length === 0 && filteredCoins.length === 0 ? (
+                <div className="no-coin">
+                  No add favorite coins. Coins empty!
+                </div>
               ) : (
-                <CoinList coins={filteredCoins} />
+                <List
+                  className="coin-list-all"
+                  width={300}
+                  height={400}
+                  itemCount={filteredCoins.length}
+                  itemSize={35}
+                >
+                  {Row}
+                </List>
               )}
             </div>
           </div>,
